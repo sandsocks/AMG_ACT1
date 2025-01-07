@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BetaZone : MonoBehaviour
 {
+    [SerializeField] private twerkRadius
     // Start is called before the first frame update
     void Start()
     {

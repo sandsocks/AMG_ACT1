@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkibidiMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    private float speed = 2f;
+    [SerializeField] private float speed = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class SkibidiMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime * speed;
+        var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
         this.transform.position += direction;
 
     }
