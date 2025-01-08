@@ -6,16 +6,27 @@ using UnityEngine.UI;
 
 public class BetaZone : MonoBehaviour
 {
-    [SerializeField] private float twerkRadius;
-    [SerializeField] private float dropRadius;
+    public float deliksRadius = 3f;
+    public float dropRadius = 1f;
+    public float twerkRadius = 2f;
+    public Transform betaZone;
+    public Transform sigmaZone;
     public GameObject sigmaUI;
     private bool gameWon = false;
     
     void Update()
     {
-
+        DeliksBa();
+       // PanaloBa();
         SigmaWin();
     }
+
+    void DeliksBa()
+    {
+       // foreach (Transform betaZone in betaZones)
+    }
+
+    //void PanaloBa()
 
     private void SigmaWin()
     {
