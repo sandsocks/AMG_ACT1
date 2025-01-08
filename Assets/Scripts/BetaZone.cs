@@ -9,13 +9,14 @@ public class DangerZone : MonoBehaviour
     public float dangerRadius = 1f;
     public float winRadius = 1f;
     public float shakeRadius = 2f;
-    public Transform dangerZones;
+    public Transform[] dangerZones;
     public Transform winZone;
     public GameObject winnerUI;
     private bool gameWon = false;
     
     void Update()
     {
+        if (gameWon) return;
         DeliksBa();
         PanaloBa();
         Winner();
@@ -25,7 +26,7 @@ public class DangerZone : MonoBehaviour
     {
        foreach (Transform dangerZone in dangerZones)
        {
-            Vector3 direction = dangerZones.position - transform.position;
+            Vector3 direction = dangerZone.position - transform.position;
             float distance = direction.magnitude;
 
             if (distance < dangerRadius)
